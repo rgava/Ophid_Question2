@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<label>Name</label>{{object.name}}<br>
+<label>Author</label>{{object.author}}<br>
+<label>Is this male</label>{{object.is_this_male}}<br>
+<label>Body</label>{{object.body}}<br>
+<a href="{% url 'update' object.pk %}">Update record</a>
+<a href="{% url 'delete' object.pk %}">Delete record</a>
+{% endblock content %}

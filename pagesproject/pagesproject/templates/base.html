@@ -1,0 +1,33 @@
+<html>
+
+<head><title>{% block title %} The Base {% endblock title %}</title>
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap.min.css/\
+    bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81i\uXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Ophid Practical Test</h1>
+<header><a href="http://ophidcldapp.southafricanorth.cloudapp.azure.com:8080/dhis/api/organisationUnits?fields=id,name,level,children">Question 2 i data</a><br>
+    <a href="http://ophidcldapp.southafricanorth.cloudapp.azure.com:8080/dhis/api/dataSets?paging=false&orgUnit">Question 2 ii data</a><br>
+    <a href="http://ophidcldapp.southafricanorth.cloudapp.azure.com:8080/dhis/api/dataValueSets.json?dataSet=Eco8C6aPuYZ&orgUnit=E6B1ltaZQm3&children=true&startDate=2019-01-01&endDate=2022-04-10">Question 2 iii</a><br>
+</header>
+
+{% if user.is_authenticated %}
+<p>Hi {{ user.username }}!</p>
+<p><a href="{% url 'logout' %}">Log out</a></p>
+{% else %}
+<p>You are not logged in.</p>
+<a href="{% url 'login' %}">Log In</a>
+
+{% endif %}
+
+{% block content %}
+
+
+{% endblock content %}
+
+</body>
+</html>
